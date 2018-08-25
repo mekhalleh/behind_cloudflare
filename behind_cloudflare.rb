@@ -9,7 +9,7 @@ class MetasploitModule < Msf::Auxiliary
   def initialize(info = {})
     super(update_info(info,
       'Name'           => 'Behind CloudFlare',
-      'Version'        => '$Release: 1.1',
+      'Version'        => '$Release: 1.1.1',
       'Description'    => %q{
         This module can be useful if you need to test
         the security of your server and your website

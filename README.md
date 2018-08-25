@@ -11,7 +11,7 @@ behind Cloudflare by discovering the real IP address.
 
 More precisely, I use multiple data sources (DNS enumeration, SEO PrePost, Censys) to collect
 assigned (or have been) IP addresses from the targeted site or domain that uses the 
-BinarySec or IngenSec WAF as a service.
+Cloudflare WAF as a service.
 
 ![alt text][module_demo]
 
