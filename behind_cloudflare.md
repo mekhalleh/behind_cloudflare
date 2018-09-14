@@ -14,6 +14,19 @@ More precisely, it is an simple "cloudflair" implementation for metasploit-frame
 
 ## Options
 
+  **CENSYS_SECRET**
+
+  Your Censys API SECRET.
+
+  **CENSYS_UID**
+
+  Your Censys API UID.
+
+  **COMPSTR**
+
+  You can use a custom string to perform the comparison. Default: TITLE or HOSTNAME if it's empty.
+  The best way is always to use COMPSTR for a better result.
+
   **HOSTNAME**
 
   This is the hostname [fqdn] on which the website responds. But this can also be a domain.
@@ -21,6 +34,10 @@ More precisely, it is an simple "cloudflair" implementation for metasploit-frame
     msf auxiliary(gather/behind_cloudflare) > set hostname www.zataz.com
     --or--
     msf auxiliary(gather/behind_cloudflare) > set hostname discordapp.com
+
+  **Poxies**
+
+  A proxy chain of format type:host:port[,type:host:port][...]. It's optional.
 
   **RPORT**
 
@@ -30,17 +47,13 @@ More precisely, it is an simple "cloudflair" implementation for metasploit-frame
 
   Negotiate SSL/TLS for outgoing connections. Default: true
 
-  **URIPATH**
-
-  The URI path on which to perform the page comparison. Default: '/'
-
-  **Poxies**
-
-  A proxy chain of format type:host:port[,type:host:port][...]. It's optional.
-
   **THREADS**
 
   Number of concurent threads needed for DNS enumeration. Default: 15
+
+  **URIPATH**
+
+  The URI path on which to perform the page comparison. Default: '/'
 
   **WORDLIST**
 
@@ -48,9 +61,9 @@ More precisely, it is an simple "cloudflair" implementation for metasploit-frame
 
 ## Advanced options
 
-  **COMPSTR**
+  **DNSENUM**
 
-  You can use a custom string to perform the comparison. Default: HOSTNAME if it's empty.
+  Set DNS enumeration as optional. Default: true
 
   **NS**
 
