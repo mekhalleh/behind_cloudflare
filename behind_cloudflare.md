@@ -49,7 +49,7 @@ More precisely, it is an simple "cloudflair" implementation for metasploit-frame
 
   **THREADS**
 
-  Number of concurent threads needed for DNS enumeration. Default: 15
+  Number of concurent threads needed for DNS enumeration. Default: 8
 
   **URIPATH**
 
@@ -69,6 +69,10 @@ More precisely, it is an simple "cloudflair" implementation for metasploit-frame
 
   Specify the nameserver to use for queries. Default: is system DNS
 
+  **TIMEOUT**
+
+  HTTP(s) request timeout. Default: 15
+
   **VERBOSE**
 
   You can also enable the verbose mode to have more information displayed in the console.
@@ -80,30 +84,25 @@ More precisely, it is an simple "cloudflair" implementation for metasploit-frame
   If successful, you must be able to obtain the IP(s) address of the website as follows:
 
   ```
-  msf auxiliary(gather/behind_cloudflare) > set verbose true
-  verbose => true
-  msf auxiliary(gather/behind_cloudflare) > run
+msf auxiliary(gather/behind_cloudflare) > set verbose true 
+verbose => true
+msf auxiliary(gather/behind_cloudflare) > run
 
-  [*] Passive gathering information...
-  [*]  * PrePost SEO: 3 IP address found(s).
-  [*]  * DNS Enumeration: 12 IP address found(s).
-  [*] Clean cloudflare server(s)...
-  [+]  * TOTAL: 13 IP address found(s) after cleaning.
-  [*] 
-  [*] Bypass cloudflare is in progress...
-  [*]  * Trying: XXX.XXX.XXX.XXX:80
-  [+] A direct-connect IP address was found: XXX.XXX.XXX.XXX
-  [*]  * Trying: XXX.XXX.XXX.XXX:443
-        --> responded with an unexpected HTTP status code: 302
-  [*]  * Trying: XXX.XXX.XXX.XXX:80
-        --> responded with an unexpected HTTP status code: 301
-  [*]  * Trying: XXX.XXX.XXX.XXX:443
-        --> responded with an unexpected HTTP status code: 404
-  [*]  * Trying: XXX.XXX.XXX.XXX:80
-        --> responded with an unexpected HTTP status code: 302
-  [*]  * Trying: XXX.XXX.XXX.XXX:443
-        --> responded with an unexpected HTTP status code: 404
-  [*] Auxiliary module execution completed
+[*] Passive gathering information...
+[*]  * ViewDNS.info: 36 IP address found(s).
+[*]  * DNS Enumeration: 4 IP address found(s).
+[*]  * Censys IPv4: 2 IP address found(s).
+[*] 
+[*] Clean cloudflare server(s)...
+[+]  * TOTAL: 7 IP address found(s) after cleaning.
+[*] 
+[*] Bypass cloudflare is in progress...
+[*]  * Trying: http://XXX.XXX.XXX.XXX:80/
+      --> responded with an unexpected HTTP status code: 500
+[*]  * Trying: https://XXX.XXX.XXX.XXX:443/
+      --> responded with an unexpected HTTP status code: 500
+[-] No direct-connect IP address found :-(
+[*] Auxiliary module execution completed
   ```
 
   For example:
